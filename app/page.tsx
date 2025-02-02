@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "@/app/ui/home.module.css";
 import { lusitana } from "@/app/ui/fonts";
 import Image from "next/image";
+import PujaService from "@/app/ui/test";
 
 export default function Page() {
   return (
@@ -52,6 +53,7 @@ export default function Page() {
           />
         </div>
       </div>
+      {/* <PujaService /> */}
     </main>
   );
 }

@@ -1,35 +1,42 @@
 "use client";
 import Image from "next/image";
-export default function PujaService() {
-  const stats = [
-    {
-      number: "10,00,000+",
-      label: "Puja's Done",
-      icon: "/placeholder.svg?height=50&width=50",
-    },
-    {
-      number: "300,000+",
-      label: "Happy Devotees",
-      icon: "/placeholder.svg?height=50&width=50",
-    },
-    {
-      number: "100+",
-      label: "Famous Temples in India",
-      icon: "/placeholder.svg?height=50&width=50",
-    },
-    {
-      number: "1 Sankalp",
-      label: "Spreading Sanatan Dharma",
-      icon: "/placeholder.svg?height=50&width=50",
-    },
-  ];
+import AnimatedCounter from "@/app/ui/AnimatedCounter";
 
+interface Stat {
+  number: string;
+  label: string;
+  icon: string;
+}
+
+const stats: Stat[] = [
+  {
+    number: "10,00,000+",
+    label: "Puja's Done",
+    icon: "/placeholder.svg?height=50&width=50",
+  },
+  {
+    number: "300,000+",
+    label: "Happy Devotees",
+    icon: "/placeholder.svg?height=50&width=50",
+  },
+  {
+    number: "100+",
+    label: "Famous Temples in India",
+    icon: "/placeholder.svg?height=50&width=50",
+  },
+  {
+    number: "1 Sankalp",
+    label: "Spreading Sanatan Dharma",
+    icon: "/placeholder.svg?height=50&width=50",
+  },
+];
+
+export default function PujaService() {
   return (
     <div className="min-h-screen bg-white px-4 md:px-20">
       {/* Header Section */}
-      <div className="md:bg-gradient-to-r from-[#FE9002] to-[#FF4C13] relative rounded-xl">
+      <div className="sm:bg-gradient-to-r from-[#FE9002] to-[#FF4C13] relative rounded-xl">
         <div className="container flex flex-col items-center mx-auto px-4 pt-12 pb-8 md:pb-16 text-center">
-          {" "}
           <h1 className="text-black sm:text-white text-xl md:text-2xl lg:text-3xl font-serif max-w-4xl mx-auto leading-tight">
             Embark on a Divine Journey with
             <br />
@@ -51,7 +58,6 @@ export default function PujaService() {
           />
         </div>
         {/* Decorative Border */}
-
         <div className="absolute -bottom-1 left-0 right-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,9 +83,7 @@ export default function PujaService() {
       </div>
 
       {/* Temple Icon Section */}
-      <div className="container mx-auto px-4 ">
-        {" "}
-        {/* Added top padding instead of negative margin */}
+      <div className="container mx-auto px-4">
         <div className="flex justify-center mb-4">
           <img
             src="/Logo_Meri_Bhakti_White.svg"
@@ -97,25 +101,16 @@ export default function PujaService() {
         </div>
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4 pb-16">
-          {" "}
-          {/* Added bottom padding */}
           {stats.map((stat, index) => (
             <div
               key={index}
               className="shadow-lg rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300"
             >
-              {stat.number && (
-                <div className="text-3xl font-bold text-[#FF6B1A] mb-2">
-                  {stat.number}
-                </div>
-              )}
-              {/* <img
-                src={
-                  stat.icon || "/placeholder.svg"
-                }
-                alt={stat.label}
-                className="w-12 h-12 mx-auto mb-4"
-              /> */}
+              <div className="text-3xl font-bold text-[#FF6B1A] mb-2">
+                <AnimatedCounter
+                  targetString={stat.number}
+                />
+              </div>
               <div className="text-lg font-medium text-black">
                 {stat.label}
               </div>

@@ -1,0 +1,14 @@
+{
+  "dashboardPage": {
+    "title": "Home",
+    "description": "Welcome to the Homepage",
+    "content": "This is the home page content."
+  },
+  "check": {
+    "title": "checking"
+  },
+  "LocaleSwitcher": {
+    "label": "Change Lang",
+    "Locale": "{locale, select , hi {hindi} en {english} other {Unknown}}"
+  }
+}

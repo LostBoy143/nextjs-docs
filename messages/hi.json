@@ -1,0 +1,14 @@
+{
+  "dashboardPage": {
+    "title": "होम",
+    "description": "होमपेज पर स्वागत है",
+    "content": "यह होम पेज की सामग्री है।"
+  },
+  "check": {
+    "title": "जांच"
+  },
+  "LocaleSwitcher": {
+    "label": "भाषा बदलें",
+    "Locale": "{locale, select, hi {हिंदी} en {अंग्रेज़ी} other {अज्ञात}}"
+  }
+}
